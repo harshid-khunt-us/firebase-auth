@@ -28,7 +28,7 @@ export default function SignIn() {
           };
 
           const res = api.post('/', body);
-          if (res) {
+          if (res?.data) {
             window.location.href = 'https://spell-checker.logicwind.co/';
           }
         } else {
