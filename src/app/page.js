@@ -5,26 +5,21 @@ import { useEffect, useState } from 'react';
 
 export default function SignIn() {
   const [providerLoading, setProviderLoading] = useState(false);
-  const [user, setUser] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
         setProviderLoading(true);
-
-        // Check for existing user
         const result = await getRedirectResult();
         if (result?.user) {
-          // User is authenticated
-          setUser(result.user);
+          window.open('https://spell-checker.logicwind.co/');
         } else {
           // No user found, trigger login
           await loginWithGoogle();
         }
       } catch (err) {
-        // Handle errors here
         // eslint-disable-next-line no-console
-        console.log(err);
+        console.log('error', err);
       } finally {
         setProviderLoading(false);
       }
@@ -32,21 +27,12 @@ export default function SignIn() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      {providerLoading ? (
-        <div className="text-center">
+    <>
+      {providerLoading && (
+        <div>
           <p>Loading...</p>
         </div>
-      ) : user ? (
-        <div>
-          <p>Welcome, {user.displayName || 'User'}!</p>
-          {/* Add additional UI or redirect as needed */}
-        </div>
-      ) : (
-        <div>
-          <p>No user found. Please sign in.</p>
-        </div>
       )}
-    </div>
+    </>
   );
 }
