@@ -47,7 +47,7 @@ export default function SignIn() {
       ) : (
         <>
           <button onClick={handleGoogleLogin}>google</button>
-          <div>new1</div>
+          <div>new2</div>
         </>
       )}
     </div>
