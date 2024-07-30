@@ -8,7 +8,7 @@ import {
 
 const configs = {
   apiKey: 'AIzaSyDB1T-3r1tAvepwHdmUL70SCSrHaj5z2qI',
-  authDomain: 'firebase-auth-x1m9.vercel.app',
+  authDomain: 'localhost',
   projectId: 'my-project-2-4e46d',
   storageBucket: 'my-project-2-4e46d.appspot.com',
   messagingSenderId: '816833407494',

@@ -5,50 +5,47 @@ import { useEffect, useState } from 'react';
 
 export default function SignIn() {
   const [providerLoading, setProviderLoading] = useState(false);
-
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     // eslint-disable-next-line no-console
-  //     console.log('Auth state changed:', currentUser);
-  //   });
-
-  //   // Cleanup function to unsubscribe when component unmounts
-  //   return () => unsubscribe();
-  // }, []);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     (async () => {
       try {
         setProviderLoading(true);
-        const res = await getRedirectResult();
-        // eslint-disable-next-line no-console
-        console.log(res);
+
+        // Check for existing user
+        const result = await getRedirectResult();
+        if (result?.user) {
+          // User is authenticated
+          setUser(result.user);
+        } else {
+          // No user found, trigger login
+          await loginWithGoogle();
+        }
       } catch (err) {
+        // Handle errors here
         // eslint-disable-next-line no-console
         console.log(err);
       } finally {
         setProviderLoading(false);
       }
     })();
-  }, [setProviderLoading]);
+  }, []);
 
-  const handleGoogleLogin = async () => {
-    try {
-      loginWithGoogle();
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
-    }
-  };
   return (
-    <div>
+    <div className="flex items-center justify-center h-screen">
       {providerLoading ? (
-        'Loading...'
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      ) : user ? (
+        <div>
+          <p>Welcome, {user.displayName || 'User'}!</p>
+          {/* Add additional UI or redirect as needed */}
+        </div>
       ) : (
-        <>
-          <button onClick={handleGoogleLogin}>google</button>
-          <div>new3</div>
-        </>
+        <div>
+          <p>No user found. Please sign in.</p>
+        </div>
       )}
     </div>
   );
