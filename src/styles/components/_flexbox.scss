@@ -1,0 +1,92 @@
+@use '../utils/'as *;
+//=========================================
+/********** flex box class start here **************/
+//=========================================
+
+.d-flex {
+  @include flexbox;
+}
+
+.flex-horizontal {
+  @include flex-direction($value: row);
+}
+
+.flex-vertical {
+  @include flex-direction($value: column);
+}
+
+.justify-center {
+  @include justify-content($value: center);
+}
+
+.justify-start {
+  @include justify-content($value: flex-start);
+}
+
+.justify-end {
+  @include justify-content($value: end);
+}
+
+.justify-between {
+  @include justify-content($value: space-between);
+}
+
+.justify-around {
+  @include justify-content($value: space-around);
+}
+
+.align-center {
+  @include align-items($value: center);
+}
+
+.align-start {
+  @include align-items($value: flex-start);
+}
+
+.align-end {
+  @include align-items($value: end);
+}
+
+.flex-grow-1 {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+}
+
+.flex-shrink-0 {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.flex-shrink-1 {
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+
+.flex-shrink-2 {
+  -ms-flex-negative: 2;
+  flex-shrink: 2;
+}
+
+.flex-wrap {
+  @include flex-wrap($value: wrap);
+}
+
+.align-self-end {
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+//=========================================
+/********** flex box class end here **************/
+//=========================================

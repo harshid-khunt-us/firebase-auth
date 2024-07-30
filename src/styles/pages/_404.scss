@@ -1,0 +1,40 @@
+@use '../utils/'as *;
+
+.page-not-found-wrapper {
+    height: 100vh;
+    display: table;
+    max-width: 500px;
+    width: 96%;
+    margin: auto;
+
+    .page-not-found-block {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.page-not-found {
+    padding: 40px 0;
+    text-align: center;
+
+    h1 {
+        font-size: 150px;
+        line-height: 1.2;
+
+        @include respond-to($screen767) {
+            font-size: 90px;
+        }
+
+        span {
+            color: $primary;
+        }
+    }
+
+    img {
+        margin: auto;
+    }
+
+    p {
+        margin: 12px 0 32px 0;
+    }
+}

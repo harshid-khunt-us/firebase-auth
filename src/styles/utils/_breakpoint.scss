@@ -1,0 +1,146 @@
+/*responsive screen size start here*/
+$screen1750: 1750px;
+$screen1500: 1500px;
+$screen1460: 1460px;
+$screen1360: 1360px;
+$screen1350: 1350px;
+$screen1260: 1260px;
+$screen1170: 1170px;
+$screen1080: 1080px;
+$screen1024: 1024px;
+$screen991: 991px;
+$screen900: 900px;
+$screenup768: 768px;
+$screen767: 767px;
+$screen640: 640px;
+$screen540: 540px;
+$screen480: 480px;
+$screen414: 414px;
+$screen375: 375px;
+$screen360: 360px;
+$screen320: 320px;
+
+/*responsive screen size end here*/
+@mixin respond-to($class) {
+    @if $class==$screen1750 {
+        @media only screen and (max-width: $screen1750) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1500 {
+        @media only screen and (max-width: $screen1500) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1460 {
+        @media only screen and (max-width: $screen1460) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1360 {
+        @media only screen and (max-width: $screen1360) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1350 {
+        @media only screen and (max-width: $screen1350) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1260 {
+        @media only screen and (max-width: $screen1260) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1170 {
+        @media only screen and (max-width: $screen1170) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1080 {
+        @media only screen and (max-width: $screen1080) {
+            @content;
+        }
+    }
+
+    @if $class==$screen1024 {
+        @media only screen and (max-width: $screen1024) {
+            @content;
+        }
+    }
+
+    @if $class==$screen991 {
+        @media only screen and (max-width: $screen991) {
+            @content;
+        }
+    }
+
+    @if $class==$screen900 {
+        @media only screen and (max-width: $screen900) {
+            @content;
+        }
+    }
+
+    @if $class==$screenup768 {
+        @media only screen and (min-width: $screenup768) {
+            @content;
+        }
+    }
+
+    @if $class==$screen767 {
+        @media only screen and (max-width: $screen767) {
+            @content;
+        }
+    }
+
+    @if $class==$screen640 {
+        @media only screen and (max-width: $screen640) {
+            @content;
+        }
+    }
+
+    @if $class==$screen540 {
+        @media only screen and (max-width: $screen540) {
+            @content;
+        }
+    }
+
+    @if $class==$screen480 {
+        @media only screen and (max-width: $screen480) {
+            @content;
+        }
+    }
+
+    @if $class==$screen414 {
+        @media only screen and (max-width: $screen414) {
+            @content;
+        }
+    }
+
+    @if $class==$screen375 {
+        @media only screen and (max-width: $screen375) {
+            @content;
+        }
+    }
+
+    @if $class==$screen360 {
+        @media only screen and (max-width: $screen360) {
+            @content;
+        }
+    }
+
+    @if $class==$screen320 {
+        @media only screen and (max-width: $screen320) {
+            @content;
+        }
+    }
+}
+
+/*responsive screen size end here*/

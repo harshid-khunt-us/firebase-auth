@@ -1,0 +1,59 @@
+@use "../utils/mixin"as *;
+
+/*typograpy css start here*/
+
+h1,
+.h1 {
+   @include headingOne;
+}
+
+h2,
+.h2 {
+   @include headingTwo;
+}
+
+h3,
+.h3 {
+   @include headingThree;
+}
+
+h4,
+.h4 {
+   @include headingFour;
+}
+
+h5,
+.h5 {
+   @include headingFive;
+}
+
+h6,
+.h6 {
+   @include headingSix;
+}
+
+.body-xl {
+   @include bodyXl;
+}
+
+.body-l {
+   @include bodyL;
+}
+
+.body-m {
+   @include bodyM;
+}
+
+.body-base {
+   @include bodyBase;
+}
+
+.body-meta {
+   @include bodyMeta;
+}
+
+.body-micro {
+   @include bodyMicro;
+}
+
+/*typography css end here*/

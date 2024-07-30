@@ -1,0 +1,34 @@
+@use '../utils/'as *;
+
+.no-data-found {
+    padding: 136px 0;
+
+    @include respond-to($screen767) {
+        padding: 104px 0;
+    }
+
+    img {
+        margin: auto;
+
+        @include respond-to($screen767) {
+            height: 120px;
+            width: 120px;
+        }
+    }
+
+    h5 {
+        margin-top: 32px;
+        margin-bottom: 4px;
+
+        @include respond-to($screen767) {
+            margin-top: 24px;
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        max-width: 616px;
+        width: 100%;
+        margin: auto;
+    }
+}

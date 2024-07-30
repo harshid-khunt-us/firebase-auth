@@ -4,6 +4,8 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@lib/*": ["src/lib/*"],
+      "@styles/*": ["src/styles/*"],
+      "@theme/*": ["src/theme/*"]
     }
   }
 }

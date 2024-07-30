@@ -1,0 +1,5 @@
+@use 'variable'as *;
+
+.text-primary {
+    color: $primary;
+}
