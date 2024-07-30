@@ -7,12 +7,13 @@ import {
 } from 'firebase/auth';
 
 const configs = {
-  apiKey: 'AIzaSyCJR2EJd-L5ZK0kCiMEg8R6b2TKQAavwVY',
-  authDomain: 'authentication-5b733.firebaseapp.com',
-  projectId: 'authentication-5b733',
-  storageBucket: 'authentication-5b733.appspot.com',
-  messagingSenderId: '342176075234',
-  appId: '1:342176075234:web:68dc08402e84a37b10bdbb',
+  apiKey: 'AIzaSyDB1T-3r1tAvepwHdmUL70SCSrHaj5z2qI',
+  authDomain: 'my-project-2-4e46d.firebaseapp.com',
+  projectId: 'my-project-2-4e46d',
+  storageBucket: 'my-project-2-4e46d.appspot.com',
+  messagingSenderId: '816833407494',
+  appId: '1:816833407494:web:0f92297e208a64cc773187',
+  measurementId: 'G-4ZXR2JLC8P',
 };
 
 const app = getApps()?.length > 0 ? getApp() : initializeApp(configs);
