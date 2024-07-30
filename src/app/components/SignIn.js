@@ -27,10 +27,7 @@ export default function SignIn() {
             writeKey,
           };
 
-          const res = api.post('/', body);
-
-          // eslint-disable-next-line no-console
-          console.log('res', res);
+          const res = await api.post('/', body);
           if (res?.data) {
             window.location.href = 'https://spell-checker.logicwind.co/';
           }
