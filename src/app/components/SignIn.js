@@ -28,6 +28,9 @@ export default function SignIn() {
           };
 
           const res = api.post('/', body);
+
+          // eslint-disable-next-line no-console
+          console.log('res', res);
           if (res?.data) {
             window.location.href = 'https://spell-checker.logicwind.co/';
           }
@@ -36,7 +39,7 @@ export default function SignIn() {
         }
       } catch (err) {
         // eslint-disable-next-line no-console
-        console.log('error', err);
+        console.error('error', err);
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
