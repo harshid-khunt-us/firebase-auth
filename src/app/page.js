@@ -1,51 +1,13 @@
-'use client';
+import { Suspense } from 'react';
 
-import api from '@lib/api';
-import { getRedirectResult } from '@lib/firebase';
-import { Spin } from 'antd';
-import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import SignIn from './components/SignIn';
 
-export default function SignIn() {
-  const searchParams = useSearchParams();
-  const writeKey = searchParams.get('writeKey');
-
-  useEffect(() => {
-    (async () => {
-      try {
-        if (writeKey) {
-          localStorage.setItem('writeKey', writeKey);
-        }
-
-        const result = await getRedirectResult();
-        const user = result?.user;
-        if (user) {
-          const googleIdToken = await user.getIdToken();
-          const writeKey = localStorage.getItem('writeKey');
-          const body = {
-            token: `Bearer ${googleIdToken}`,
-            writeKey,
-          };
-
-          const res = api.post('/', body);
-          if (res) {
-            window.location.href = 'https://spell-checker.logicwind.co/';
-          }
-        } else {
-          // No user found, trigger login
-          // await loginWithGoogle();
-        }
-      } catch (err) {
-        // eslint-disable-next-line no-console
-        console.log('error', err);
-      }
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+const page = () => {
   return (
-    <div className="sign-in-wrapper">
-      <Spin size="large" />
-    </div>
+    <Suspense>
+      <SignIn />
+    </Suspense>
   );
-}
+};
+
+export default page;
