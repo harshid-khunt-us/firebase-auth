@@ -34,6 +34,14 @@ const nextConfig = {
     });
     return headers;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/__/auth/:path*',
+        destination: `https://firebase-auth-x1m9.vercel.app/__/auth/:path*`,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
