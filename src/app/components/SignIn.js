@@ -28,8 +28,6 @@ export default function SignIn() {
           };
 
           const res = await api.post('/', body);
-          // eslint-disable-next-line no-console
-          console.log('res', res);
           if (res?.data) {
             window.location.href = 'https://spell-checker.logicwind.co/';
           }
