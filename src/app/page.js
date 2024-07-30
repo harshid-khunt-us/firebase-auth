@@ -45,7 +45,10 @@ export default function SignIn() {
       {providerLoading ? (
         'Loading...'
       ) : (
-        <button onClick={handleGoogleLogin}>google</button>
+        <>
+          <button onClick={handleGoogleLogin}>google</button>
+          <div>new1</div>
+        </>
       )}
     </div>
   );
