@@ -12,7 +12,7 @@ export default function SignIn() {
         setProviderLoading(true);
         const result = await getRedirectResult();
         if (result?.user) {
-          window.open('https://spell-checker.logicwind.co/');
+          window.location.href = 'https://spell-checker.logicwind.co/';
         } else {
           // No user found, trigger login
           await loginWithGoogle();
