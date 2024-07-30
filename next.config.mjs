@@ -38,7 +38,7 @@ const nextConfig = {
     return [
       {
         source: '/__/auth/:path*',
-        destination: `https://firebase-auth-x1m9.vercel.app/__/auth/:path*`,
+        destination: `https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*`,
       },
     ];
   },
