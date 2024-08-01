@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const TARGET = `https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*`;
+const TARGET = 'https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*';
 
 async function proxyRequest(request) {
   const url = new URL(request.url);
@@ -29,13 +29,13 @@ async function proxyRequest(request) {
 
 export async function GET(request) {
   // eslint-disable-next-line no-console
-  console.log('in api GET');
+  console.log('Handling GET request');
   return proxyRequest(request);
 }
 
 export async function POST(request) {
   // eslint-disable-next-line no-console
-  console.log('in api POST');
+  console.log('Handling POST request');
   return proxyRequest(request);
 }
 

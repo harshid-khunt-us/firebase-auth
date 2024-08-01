@@ -1,7 +1,7 @@
 'use client';
 
 import api from '@lib/api';
-import { getRedirectResult, loginWithGoogle } from '@lib/firebase';
+import { getRedirectResult } from '@lib/firebase';
 import { Spin } from 'antd';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
@@ -34,7 +34,7 @@ export default function SignIn() {
             window.location.href = 'https://spell-checker.logicwind.co/';
           }
         } else {
-          await loginWithGoogle();
+          // await loginWithGoogle();
         }
       } catch (err) {
         // eslint-disable-next-line no-console
