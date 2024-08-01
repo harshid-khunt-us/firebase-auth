@@ -1,18 +1,19 @@
 import { NextResponse } from 'next/server';
 
-const TARGET = 'https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*';
+const BASE_TARGET_URL =
+  'https://my-project-2-4e46d.firebaseapp.com/__/auth/handler';
 
 async function proxyRequest(request) {
   const url = new URL(request.url);
-  const targetUrl = new URL(url.pathname.replace(/^\/api\/auth/, ''), TARGET);
 
-  // Forward the search params
+  // Construct the target URL with the incoming query parameters
+  const targetUrl = new URL(BASE_TARGET_URL);
   targetUrl.search = url.search;
 
   const proxyRequest = new Request(targetUrl, {
     method: request.method,
     headers: request.headers,
-    body: request.body,
+    body: request.method === 'POST' ? request.body : null, // Only include body for POST requests
   });
 
   const response = await fetch(proxyRequest);
