@@ -18,6 +18,8 @@ export default function SignIn() {
         }
 
         const result = await getRedirectResult();
+        // eslint-disable-next-line no-console
+        console.log('User', result?.user);
         const user = result?.user;
         if (user) {
           const googleIdToken = await user.getIdToken();
