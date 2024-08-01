@@ -34,14 +34,14 @@ const nextConfig = {
     });
     return headers;
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/__/auth/:path*',
-  //       destination: `https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*`,
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: '/__/auth/:path*',
+        destination: `https://my-project-2-4e46d.firebaseapp.com/__/auth/:path*`,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

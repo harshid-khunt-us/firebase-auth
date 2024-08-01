@@ -10,6 +10,9 @@ async function proxyRequest(request) {
   const targetUrl = new URL(BASE_TARGET_URL);
   targetUrl.search = url.search;
 
+  // eslint-disable-next-line no-console
+  console.log('targetUrl', targetUrl);
+
   const proxyRequest = new Request(targetUrl, {
     method: request.method,
     headers: request.headers,
